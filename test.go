@@ -23,6 +23,13 @@ func main() {
 	fmt.Println(chance.Integer(15, 5))
 	fmt.Println("")
 
+	fmt.Println(" -- FLOAT --")
+	for i := 1; i <= 10; i++ {
+		fmt.Println(chance.Float(-5, 5))
+	}
+	fmt.Println(chance.Float(15, 5))
+	fmt.Println("")
+
 	for i := 1; i <= 10; i++ {
 		var char, _ = chance.Character("", "", false, false)
 		fmt.Println(string(char))
@@ -46,5 +53,12 @@ func main() {
 	fmt.Println(chance.PickInt(orderedArr, 20))
 	fmt.Println(chance.PickInt(orderedArr, -20))
 	fmt.Println(chance.PickInt([]int{}, 20))
+	fmt.Println("")
+
+	for i := 1; i <= 20; i++ {
+		fmt.Println(chance.WeightedInt(orderedArr, orderedArr))
+	}
+	fmt.Println(chance.WeightedInt(orderedArr, []int{-1, -1, -1, -1, -1, -1}))
+	fmt.Println(chance.WeightedInt(orderedArr, []int{1, 2}))
 	fmt.Println("")
 }
